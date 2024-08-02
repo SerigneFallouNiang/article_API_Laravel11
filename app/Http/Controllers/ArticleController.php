@@ -75,5 +75,5 @@ class ArticleController extends Controller
 
         $article->delete();
 
-        return response()->json(['message'=>'article deleted successfully'],404);    }
+        return response()->json(['message'=>'article deleted successfully']);    }
 }

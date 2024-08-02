@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Article;
 use Illuminate\Http\Request;
 
 class ArticleController extends Controller
@@ -19,10 +20,10 @@ class ArticleController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'title'=>'required | string | max:255',
-            'body'=>'required | sting',
-        ]);
+        // $request->validate([
+        //     'title'=>'required | string | max:255',
+        //     'body'=>'required | sting',
+        // ]);
         return Article::create($request->all());
     }
 
@@ -52,10 +53,10 @@ class ArticleController extends Controller
             return response()->json(['message'=>'article non touvée'],404);
         }
 
-        $request->validate([
-            'title'=>'required | string | max:255',
-            'body'=>'required | sting',
-        ]);
+        // $request->validate([
+        //     'title'=>'required | string | max:255',
+        //     'body'=>'required | sting',
+        // ]);
 
         $article->update($request->all());
         return $article;
